@@ -4,7 +4,9 @@
   "repository": "https://github.com/annette-graham/map-app.git",
   "main": "index.js",
   "scripts": {
-    "start": "node server & webpack --watch",
+    "start": "node server",
+    "dev": "node server & webpack --watch",
+    "postinstall": "webpack",
     "knex": "knex",
     "test": "jest"
   },
