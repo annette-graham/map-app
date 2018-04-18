@@ -2,19 +2,18 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import WorldMap from './WorldMap'
 import UpdateForm from './UpdateForm'
-import Country from './Country'
-
+import CountryDetails from './CountryDetails'
 
 class App extends React.Component {
   constructor(props) {
    super(props)
    this.state = {
      error: null,
-     updates: []
+     map: [],
      detailsVisible: false
    }
 
-   this.makeUpdate = this.makeUpdate.bind(this)
+   // this.makeUpdate = this.makeUpdate.bind(this)
    this.refreshMap = this.refreshMap.bind(this)
    this.renderMap = this.renderMap.bind(this)
    this.showDetails = this.showDetails.bind(this)
@@ -36,11 +35,21 @@ class App extends React.Component {
   refreshMap (err) {
     this.setState({
       error:err
-
     })
     getMap(this.renderMap)
   }
 
+  showDetails () {
+    this.setState({
+      detailsVisible: true
+    })
+  }
+
+  hideDetails () {
+    this.setState({
+      detailsVisible: false
+    })
+  }
 
 
   // makeUpdate (update) {
@@ -52,18 +61,16 @@ class App extends React.Component {
 
   render () {
     console.log(this.state.updates)
-    return <Router>
-      <React.Fragment>
-        <div className='title'>
-          <h1>Click a Country!</h1>
-        </div>
-        <Route path = '/' component = {WorldMap}/>
-        <Route path = '/country' component = {Country}/>
-        <Route path = '/' component = {
-          (props) => <UpdateForm makeUpdate={this.makeUpdate} {...props} />
-        }/>
-      </React.Fragment>
-    </Router>
+    return (
+      <div className='title'>
+        <h1>Click a Country!</h1>
+          <WorldMap/>
+      </div>
+    )
+
+      // <button onClick={}</button>//this needs to be linked to country ID}>
+      // <CountryDetails map={this.state.map} isVisible={this.state.detailsVisible}/>
+    // }/>
   }
 }
 

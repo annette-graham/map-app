@@ -1,3 +1,11 @@
-let environment = process.env.NODE_ENV || 'development'
-let config = require('../knexfile')[environment]
-let db = require('knex')(config)
+const path = require('path')
+const config = require(path.join(__dirname, '../knexfile')).development
+const knex = require('knex')(config)
+
+
+//
+// function getMap {
+//   return knex('WorldMap')
+//   .select()
+// }
+//

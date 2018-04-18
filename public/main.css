@@ -1,5 +1,5 @@
 body {
-	background-image: url("https://media.giphy.com/media/fC6BAcnLFF2o/giphy.gif");
+	/* background-image: url("https://media.giphy.com/media/fC6BAcnLFF2o/giphy.gif"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-left: 10%;
@@ -12,6 +12,14 @@ body {
 
 .title {
   font-size: 2em;
+}
+
+.country-details .visible {
+  display: block;
+}
+
+.country-details .hidden {
+  display: none;
 }
 
 
