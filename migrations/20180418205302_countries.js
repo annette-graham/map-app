@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('capital')
     table.string('currency')
     table.string('population')
+    table.string('country_code')
   })
 };
 
