@@ -7,8 +7,9 @@ function clickedCountry (countryCode) {
   return knex('countries')
   .where('country_code', countryCode)
   .select()
+  .first()
 }
 
 
 
-module.exports = clickedCountry
+module.exports = {clickedCountry}

@@ -28,6 +28,7 @@ class App extends React.Component {
   componentDidMount () {
     this.refreshMap
   }
+
   //
   // renderMap (err, map) {
   //   this.setState({
@@ -36,6 +37,7 @@ class App extends React.Component {
   //   })
   // }
 
+
   refreshMap (err) {
     this.setState({
       error:err
@@ -43,11 +45,13 @@ class App extends React.Component {
     // getMap(this.renderMap)
   }
 
+
   showDetails () {
     this.setState({
       detailsVisible: true
     })
   }
+
 
   hideDetails () {
     this.setState({
@@ -55,12 +59,15 @@ class App extends React.Component {
     })
   }
 
+
   selectCountry (countryCode) {
       console.log('You clicked ' + countryCode + '!')
       this.setState({
         selectedCountry: countryCode
       })
-    // getCountryCode(this.renderMap)
+    getCountryCode(countryCode, (err, data ) => {
+      console.log({err, data});
+    })
   }
 
   // makeUpdate (update) {
