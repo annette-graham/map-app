@@ -13,7 +13,8 @@ class App extends React.Component {
      error: null,
      map: [],
      detailsVisible: false,
-     selectedCountry: ''
+     selectedCountry: '',
+     data: {}
    }
 
    // this.makeUpdate = this.makeUpdate.bind(this)
@@ -67,6 +68,9 @@ class App extends React.Component {
       })
     getCountryCode(countryCode, (err, data ) => {
       console.log({err, data});
+      this.setState({
+        data: data
+      })
     })
   }
 
@@ -83,6 +87,7 @@ class App extends React.Component {
         <h1>Click a Country!</h1>
           <WorldMap selectCountry={this.selectCountry}/>
           <div>{this.state.selectedCountry}</div>
+          <CountryDetails data={this.state.data}/>
       </div>
     )
 

@@ -2,21 +2,13 @@ import React from 'react'
 import WorldMap from './WorldMap'
 
 export default function CountryDetails (props) {
+  const {country, isVisible, hideDetails} = props
+  const classes = 'country-details ' + (isVisible ? 'visible' : 'hidden')
 
-  let info = {
-      name: 'WorldMap.title',
-      language: this.state.language,
-      capital: this.state.capital
-    }
+  return (
+    <div className='classes'>
+      <h2>{props.name}</h2>
+    </div>
+  )
 
-  const {isVisible, hideDetails} = props
-
-  let classes = 'country-details ' + (isVisible ? 'visible': 'hidden')
-
-  return <div className={classes}>
-    <h1>{info.name}</h1>
-    <h3>{info.language}</h3>
-    <h3>{info.capital}</h3>
-    <button onClick={hideDetails}>Close</button>
-  </div>
 }

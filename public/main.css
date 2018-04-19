@@ -1,5 +1,5 @@
 body {
-	/* background-image: url("https://media.giphy.com/media/fC6BAcnLFF2o/giphy.gif"); */
+	/* background-image: url("https://media.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-left: 10%;
@@ -36,6 +36,7 @@ path.land:hover {
   fill-opacity: 0.65;
 }
 
+/* "https://media.giphy.com/media/fC6BAcnLFF2o/giphy.gif" */
 
 /* https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif
 -- twinkly */
