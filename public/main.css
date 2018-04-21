@@ -14,13 +14,16 @@ body {
   font-size: 2em;
 }
 
-.country-details .visible {
+.country-details .visible .p {
+	color: red;
   display: block;
 }
 
-.country-details .hidden {
+.country-details .hidden .p {
+	color: yellow;
   display: none;
 }
+
 
 
 path.land {
