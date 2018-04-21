@@ -14,7 +14,7 @@ class App extends React.Component {
      map: [],
      detailsVisible: false,
      selectedCountry: '',
-     data: {}
+     data: []
    }
 
    // this.makeUpdate = this.makeUpdate.bind(this)
@@ -66,7 +66,7 @@ class App extends React.Component {
       this.setState({
         selectedCountry: countryCode
       })
-    getCountryCode(countryCode, (err, data ) => {
+    getCountryCode(countryCode, (err, data) => {
       console.log({err, data});
       this.setState({
         data: data
@@ -74,12 +74,6 @@ class App extends React.Component {
     })
   }
 
-  // makeUpdate (update) {
-  //   const updates = this.state.updates
-  //   update.id = updates.length + 1
-  //   updates.push(update)
-  //   this.setState({updates})
-  // }
 
   render () {
     return (
@@ -91,8 +85,8 @@ class App extends React.Component {
       </div>
     )
 
-      // <button onClick={}</button>//this needs to be linked to country ID}>
-      // <CountryDetails map={this.state.map} isVisible={this.state.detailsVisible}/>
+    //   <button onClick={}</button>//this needs to be linked to country ID}>
+    //   <CountryDetails map={this.state.map} isVisible={this.state.detailsVisible}/>
     // }/>
   }
 }
