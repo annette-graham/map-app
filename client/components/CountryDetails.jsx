@@ -2,11 +2,11 @@ import React from 'react'
 import WorldMap from './WorldMap'
 
 export default function CountryDetails (props) {
-  const {data, hideDetails} = props
+  const {data, hideDetails, addInfo} = props
 
 
   return (
-    <div className='country-details'>
+    <div className='details'>
         {console.log("Here is my " + data.name)}
       <h2>{data.name}</h2>
       <p>Capital: {data.capital}</p>
@@ -14,6 +14,7 @@ export default function CountryDetails (props) {
       <p>Currency: {data.currency}</p>
       <p>population: {data.population}</p>
       <button onClick={hideDetails}>Close</button>
+      <button onClick={addInfo}>Add Info</button>
     </div>
   )
 

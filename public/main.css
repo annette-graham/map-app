@@ -1,5 +1,5 @@
 body {
-	/* background-image: url("https://media.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif"); */
+	background-image: url("https://c1.staticflickr.com/8/7221/7108632527_7f7b68b60e_b.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-left: 10%;
@@ -12,19 +12,21 @@ body {
 
 .title {
   font-size: 2em;
+	color: white;
+	padding-bottom: 5%;
 }
 
-.country-details .visible .p {
-	color: red;
-  display: block;
+.details {
+	background-color: pink;
+	color: black;
+	border-radius: 15px;
+	padding: 5% 5%;
+	position: absolute;
+	top: 30%;
+	margin-left: 30%;
+	margin-right: 30%;
+
 }
-
-.country-details .hidden .p {
-	color: yellow;
-  display: none;
-}
-
-
 
 path.land {
   fill: #CCCCCC;

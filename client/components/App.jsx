@@ -12,12 +12,12 @@ class App extends React.Component {
    this.state = {
      error: null,
      detailsVisible: false,
+     editVisible: false,
      selectedCountry: '',
      data: []
    }
 
    this.refreshMap = this.refreshMap.bind(this)
-   this.showDetails = this.showDetails.bind(this)
    this.hideDetails = this.hideDetails.bind(this)
    this.selectCountry = this.selectCountry.bind(this)
 
@@ -53,27 +53,31 @@ class App extends React.Component {
   }
 
 
-  showDetails () {
-    this.setState({
-      detailsVisible: true
-    })
-  }
-
-
   hideDetails () {
     this.setState({
       detailsVisible: false
     })
   }
 
+  addInfo () {
+    //set props edit to true
+    //set details to false false
+    // this should force render
+  }
 
   render () {
     return (
-      <div className='title'>
-        <h1>Click a Country!</h1>
+      <div className = 'container'>
+        <div className ='title'>
+          <h1>Click a Country!</h1>
+        </div>
+        <div className = 'map'>
           <WorldMap selectCountry={this.selectCountry}/>
-          {console.log(this.state.detailsVisible)}
+          // if editVisible = true, show component regardless of details being true or false
+          // remember to turn edit back to false once component is closed
+
           {this.state.detailsVisible && <CountryDetails data={this.state.data} hideDetails={this.hideDetails}/>}
+        </div>
       </div>
     )
   }

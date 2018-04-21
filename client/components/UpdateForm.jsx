@@ -6,12 +6,6 @@ class UpdateForm extends React.Component {
     this.state = {
       //form inputs that will change
       name: '',
-      language: '',
-      capital: '',
-      population: '',
-      currency: '',
-      cultural_need_to_knows: ''
-
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -37,12 +31,7 @@ class UpdateForm extends React.Component {
 
   render() {
     return <form onSubmit={this.handleSubmit}>
-      <input onChange={this.handleChange} type="text" name="name" placeholder="Countrty Name"/>
-      <input onChange={this.handleChange} type="text" name="language" placeholder="Language Spoken"/>
-      <input onChange={this.handleChange} type="text" name="capital" placeholder="Capital City"/>
-      <input onChange={this.handleChange} type="text" name="population" placeholder="Population"/>
-      <input onChange={this.handleChange} type="text" name="currency" placeholder="Currency Used"/>
-      <input onChange={this.handleChange} type="text" name="cultural_need_to_knows" placeholder="Cultural Need-to-Knows"/>
+      <input onChange={this.handleChange} type="text" name="name" placeholder="Country Name"/>
       <input type="submit" value="Update Info" />
     </form>
   }
