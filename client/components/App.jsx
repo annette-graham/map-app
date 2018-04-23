@@ -10,7 +10,8 @@ class App extends React.Component {
    super(props)
    this.state = {
      error: null,
-     updates: []
+     updates: [],
+     activeCountry: null,
      detailsVisible: false
    }
 
