@@ -2,69 +2,86 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import WorldMap from './WorldMap'
 import UpdateForm from './UpdateForm'
-import Country from './Country'
+import CountryDetails from './CountryDetails'
 
+import {getCountryCode} from '../api'
 
 class App extends React.Component {
   constructor(props) {
    super(props)
    this.state = {
      error: null,
-     updates: [],
-     activeCountry: null,
-     detailsVisible: false
+     detailsVisible: false,
+     editVisible: false,
+     selectedCountry: '',
+     data: []
    }
 
-   this.makeUpdate = this.makeUpdate.bind(this)
    this.refreshMap = this.refreshMap.bind(this)
-   this.renderMap = this.renderMap.bind(this)
-   this.showDetails = this.showDetails.bind(this)
    this.hideDetails = this.hideDetails.bind(this)
+   this.selectCountry = this.selectCountry.bind(this)
 
   }
+
 
   componentDidMount () {
     this.refreshMap
   }
 
-  renderMap (err, map) {
-    this.setState({
-      error: err,
-      map: map || []
-    })
-  }
+
 
   refreshMap (err) {
     this.setState({
       error:err
-
     })
-    getMap(this.renderMap)
+
   }
 
 
+  selectCountry (countryCode) {
+      console.log('You clicked ' + countryCode + '!')
+      this.setState({
+        selectedCountry: countryCode,
+        detailsVisible: true
+      })
+      getCountryCode(countryCode, (err, data) => {
+          console.log({err, data});
+          this.setState({
+            data: data
+          })
+      })
+  }
 
-  // makeUpdate (update) {
-  //   const updates = this.state.updates
-  //   update.id = updates.length + 1
-  //   updates.push(update)
-  //   this.setState({updates})
-  // }
+
+  hideDetails () {
+    this.setState({
+      detailsVisible: false
+    })
+  }
+
+  editNotes () {
+    //set props edit to true
+    //set details to false
+    // this should force render
+  }
 
   render () {
-    console.log(this.state.updates)
-    return <Router>
-      <React.Fragment>
-        <div className='title'>
+    return (
+      <div className = 'container'>
+        <div className ='title'>
           <h1>Click a Country!</h1>
         </div>
-        <Route path = '/' component = {WorldMap}/>
-        <Route path = '/country' component = {Country}/>
-        <Route path = '/' component = {
-          (props) => <UpdateForm makeUpdate={this.makeUpdate} {...props} />
-        }/>
-      </React.Fragment>
-    </Router>
+        <div className = 'map'>
+          <WorldMap selectCountry={this.selectCountry}/>
+      {/* // if editVisible = true, show component regardless of details being true or false
+      // remember to turn edit back to false once component is closed */}
+
+          {this.state.detailsVisible && <CountryDetails
+          data={this.state.data}
+          hideDetails={this.hideDetails}/>}
+        </div>
+      </div>
+    )
   }
 }
 

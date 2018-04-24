@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-    "dev": "node server & webpack --watch",
+    "dev": "nodemon server & webpack --watch",
     "postinstall": "webpack",
     "knex": "knex",
     "test": "jest"
@@ -19,25 +19,23 @@
   "author": "Annette <annettegraham56@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "babel-register": "^6.26.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
-    "webpack": "^3.10.0",
     "babel": "^6.23.0",
-    "body-parser": "^1.18.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
     "knex": "^0.14.4",
+    "nodemon": "^1.17.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2",
     "sqlite3": "^4.0.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "jest": "^22.4.3"

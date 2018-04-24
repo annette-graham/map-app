@@ -9,11 +9,11 @@ class WorldMap extends React.Component {
   }
 
   handleClick(event) {
-
     let countryCode = event.target.id
-    console.log('You clicked ' + countryCode + '!')
-    
+    this.props.selectCountry(countryCode)
   }
+    //console.log('You clicked ' + countryCode + '!')
+
 
   render() {
     return (<svg className="svg-map" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 1000">

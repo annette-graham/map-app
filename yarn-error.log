@@ -1,8 +1,12 @@
 Arguments: 
+<<<<<<< HEAD
   /usr/local/bin/node /usr/local/bin/yarn knex migrate:latest
+=======
+  /home/student/.nvm/versions/node/v8.10.0/bin/node /usr/share/yarn/bin/yarn.js knex seed:run
+>>>>>>> 658d9afe23711fe500ebec3aa815d11c5474cbe5
 
 PATH: 
-  /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+  /home/student/.nvm/versions/node/v8.10.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 Yarn version: 
   1.5.1
@@ -11,7 +15,7 @@ Node version:
   8.10.0
 
 Platform: 
-  darwin x64
+  linux x64
 
 npm manifest: 
   {
@@ -5527,6 +5531,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
+<<<<<<< HEAD
   Arguments: -c knex migrate:latest
   Directory: /Users/annettegraham/workspace/bootcamp/map-app
   Output:
@@ -5534,6 +5539,15 @@ Trace:
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+=======
+  Arguments: -c knex seed:run
+  Directory: /home/student/workspace/map-app
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/share/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/share/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/share/yarn/lib/cli.js:30281:17)
+>>>>>>> 658d9afe23711fe500ebec3aa815d11c5474cbe5
       at emitTwo (events.js:126:13)
       at ChildProcess.emit (events.js:214:7)
       at maybeClose (internal/child_process.js:925:16)

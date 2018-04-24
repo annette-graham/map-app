@@ -6,6 +6,6 @@ const server  = express()
 const path = require('path')
 
 server.use(express.static(path.join(__dirname, '../public')))
-server.use('/', routes)
+server.use('/api', routes)
 
 module.exports = server
