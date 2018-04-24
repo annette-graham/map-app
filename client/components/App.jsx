@@ -14,12 +14,14 @@ class App extends React.Component {
      detailsVisible: false,
      editVisible: false,
      selectedCountry: '',
-     data: []
+     data: [],
+     notes: ''
    }
 
    this.refreshMap = this.refreshMap.bind(this)
    this.hideDetails = this.hideDetails.bind(this)
    this.selectCountry = this.selectCountry.bind(this)
+   this.editNotes = this.editNotes.bind(this)
 
   }
 
@@ -60,12 +62,15 @@ class App extends React.Component {
   }
 
   editNotes () {
-    //set props edit to true
-    //set details to false
-    // this should force render
+  console.log("editNotes")
+    this.setState({
+      detailsVisible: false,
+      editVisible: true
+    })
   }
 
   render () {
+    console.log(this.state.editVisible)
     return (
       <div className = 'container'>
         <div className ='title'>
@@ -78,7 +83,13 @@ class App extends React.Component {
 
           {this.state.detailsVisible && <CountryDetails
           data={this.state.data}
-          hideDetails={this.hideDetails}/>}
+          hideDetails={this.hideDetails}
+          editNotes={this.editNotes}/>}
+
+          {this.state.editVisible && <UpdateForm
+          notes={this.state.notes}
+          editVisible={this.editVisible}/>}
+
         </div>
       </div>
     )

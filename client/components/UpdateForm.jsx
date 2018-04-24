@@ -13,11 +13,11 @@ class UpdateForm extends React.Component {
   }
 
   handleChange(e) {
-    // console.log(e.target, e.target.value)
-    var key = e.target.notes
+    console.log(e.target, e.target.value)
+    var key = e.target.name
     var value = e.target.value
      console.log({key, value});
-    this.setState({[key]: value})
+     this.setState({[key]: value})
 
 
     // this.setState({[e.target.name]: e.target.value})
@@ -30,6 +30,7 @@ class UpdateForm extends React.Component {
 
 
   render() {
+    console.log("update form")
     return <div className = 'editInfo'>
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} value={this.state.notes} type="text" name="notes" placeholder="Edit Info"/>
