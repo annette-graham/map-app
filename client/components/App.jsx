@@ -44,7 +44,8 @@ class App extends React.Component {
       console.log('You clicked ' + countryCode + '!')
       this.setState({
         selectedCountry: countryCode,
-        detailsVisible: true
+        detailsVisible: true,
+        editVisible: false
       })
       getCountryCode(countryCode, (err, data) => {
           console.log({err, data});
@@ -74,12 +75,13 @@ class App extends React.Component {
     return (
       <div className = 'container'>
         <div className ='title'>
-          <h1>Click a Country!</h1>
+          <h1>Click a Country</h1>
+        </div>
+        <div className = 'para'>
+          <p>Travellers unite! View and add information that is valuable for the cheap traveller. </p>
         </div>
         <div className = 'map'>
           <WorldMap selectCountry={this.selectCountry}/>
-      {/* // if editVisible = true, show component regardless of details being true or false
-      // remember to turn edit back to false once component is closed */}
 
           {this.state.detailsVisible && <CountryDetails
           data={this.state.data}
@@ -88,7 +90,8 @@ class App extends React.Component {
 
           {this.state.editVisible && <UpdateForm
           notes={this.state.notes}
-          editVisible={this.editVisible}/>}
+          editVisible={this.editVisible}
+          hideDetails={this.hideDetails}/>}
 
         </div>
       </div>
