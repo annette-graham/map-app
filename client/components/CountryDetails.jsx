@@ -7,8 +7,6 @@ export default function CountryDetails (props) {
 
   return (
     <div className='details'>
-        {console.log("Here is my " + data.name)}
-        {console.log("The current state notes " + notes)}
       <h2>{data.name}</h2>
       <p>Capital: {data.capital}</p>
       <p>Language: {data.language}</p>

@@ -16,7 +16,6 @@ class UpdateForm extends React.Component {
 
 
   handleChange(e) {
-    console.log(e.target, e.target.value)
     var key = e.target.name
     var value = e.target.value
     this.setState({[key]: value})
@@ -25,8 +24,6 @@ class UpdateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log("111111111111111111")
-    console.log("notes from update form" + this.state.notes)
     this.props.editNotes(this.state)
   }
 

@@ -7,7 +7,6 @@ const db = require('./db')
 const request = require('superagent')
 
 router.get('/:countryCode', (req, res) => {
-  console.log("you got me")
   db.clickedCountry(req.params.countryCode)
   .then(codes => {
     res.json(codes)
@@ -22,7 +21,6 @@ router.put('/:countryCode', (req, res) => {
   console.log(req.body, req.params)
   db.editNotes(req.body.notes, req.params.countryCode)
   .then((updatedCountry) => {
-    console.log({updatedCountry})
     res.json(updatedCountry.notes)
   })
   .catch(err => {

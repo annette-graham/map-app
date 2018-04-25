@@ -26,7 +26,6 @@ class App extends React.Component {
 
   }
 
-
   componentDidMount () {
     this.refreshMap
   }
@@ -42,7 +41,6 @@ class App extends React.Component {
 
 
   selectCountry (countryCode) {
-      console.log('You clicked ' + countryCode + '!')
       this.setState({
         selectedCountry: countryCode,
         detailsVisible: true,
@@ -72,11 +70,8 @@ class App extends React.Component {
 
 
   editNotes (notes) {
-    console.log("222222222222")
-
   console.log("editNotes")
     apiEditNotes(this.state.selectedCountry, notes, (newNotes) => {
-      console.log({newNotes})
       const {data} = this.state
       data.notes = newNotes
       this.setState({
@@ -84,9 +79,6 @@ class App extends React.Component {
         editVisible: false,
         detailsVisible: true
       })
-      console.log("STATE IS SET: NOTES=" + newNotes + "deatils vis -" + this.state)
-      console.log("The current state 1 notes " + this.state.notes)
-      console.log("The current passed in notes " + newNotes)
     })
   }
 
@@ -102,8 +94,6 @@ class App extends React.Component {
         </div>
         <div className = 'map'>
           <WorldMap selectCountry={this.selectCountry}/>
-          {console.log("The current state 2 notes" + this.state.notes)}
-
           {this.state.editVisible
             ? <UpdateForm
               editNotes={this.editNotes}
