@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const server = require('./server')
 const db = require('./db')
-
-
 const request = require('superagent')
 
 router.get('/:countryCode', (req, res) => {
@@ -15,7 +13,6 @@ router.get('/:countryCode', (req, res) => {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 })
-
 
 router.put('/:countryCode', (req, res) => {
   console.log(req.body, req.params)

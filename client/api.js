@@ -10,7 +10,6 @@ export function getCountryCode (countryCode, callback) {
       })
 }
 
-
 export function apiEditNotes (countryCode, notes, callback) {
   return request.put(`${mapUrl}/${countryCode}`)
     .send(notes)

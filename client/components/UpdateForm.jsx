@@ -1,7 +1,6 @@
 import React from 'react'
 import App from './App'
 
-
 class UpdateForm extends React.Component {
   constructor(props) {
     super(props)
@@ -11,9 +10,7 @@ class UpdateForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
   }
-
 
   handleChange(e) {
     var key = e.target.name
@@ -21,12 +18,10 @@ class UpdateForm extends React.Component {
     this.setState({[key]: value})
   }
 
-
   handleSubmit(e) {
     e.preventDefault()
     this.props.editNotes(this.state)
   }
-
 
   render() {
     console.log("update form")
@@ -39,6 +34,5 @@ class UpdateForm extends React.Component {
     </div>
   }
 }
-
 
 export default UpdateForm

@@ -1,4 +1,3 @@
-
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('countries', function (table) {
     table.increments().primary()

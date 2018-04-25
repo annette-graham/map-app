@@ -4,7 +4,6 @@ import WorldMap from './WorldMap'
 export default function CountryDetails (props) {
   const {data, notes, hideDetails, editNotes} = props
 
-
   return (
     <div className='details'>
       <h2>{data.name}</h2>
@@ -17,5 +16,4 @@ export default function CountryDetails (props) {
       <button onClick={editNotes}>Edit Notes</button>
     </div>
   )
-
 }

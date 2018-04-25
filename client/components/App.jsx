@@ -1,10 +1,9 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import WorldMap from './WorldMap'
 import UpdateForm from './UpdateForm'
 import CountryDetails from './CountryDetails'
-
-import {getCountryCode, apiEditNotes} from '../api'
+import { getCountryCode, apiEditNotes } from '../api'
 
 class App extends React.Component {
   constructor(props) {
@@ -23,22 +22,17 @@ class App extends React.Component {
    this.selectCountry = this.selectCountry.bind(this)
    this.editNotes = this.editNotes.bind(this)
    this.toggleEdit = this.toggleEdit.bind(this)
-
   }
 
   componentDidMount () {
     this.refreshMap
   }
 
-
-
   refreshMap (err) {
     this.setState({
       error:err
     })
-
   }
-
 
   selectCountry (countryCode) {
       this.setState({
@@ -54,20 +48,17 @@ class App extends React.Component {
       })
   }
 
-
   hideDetails () {
     this.setState({
       detailsVisible: false
     })
   }
 
-
   toggleEdit() {
     this.setState({
       editVisible: !this.state.editVisible
     })
   }
-
 
   editNotes (notes) {
   console.log("editNotes")
@@ -81,7 +72,6 @@ class App extends React.Component {
       })
     })
   }
-
 
   render () {
     return (
