@@ -24,7 +24,6 @@ class UpdateForm extends React.Component {
   }
 
   render() {
-    console.log("update form")
     return <div className = 'editInfo'>
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} value={this.state.notes} type="text" name="notes" placeholder="Edit Info"/>
