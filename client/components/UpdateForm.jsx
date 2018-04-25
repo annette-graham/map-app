@@ -26,7 +26,8 @@ class UpdateForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     console.log("111111111111111111")
-    this.props.editNotes(this.state.notes)
+    console.log("notes from update form" + this.state.notes)
+    this.props.editNotes(this.state)
   }
 
 

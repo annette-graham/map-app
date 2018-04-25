@@ -15,7 +15,9 @@ function editNotes(notes, countryCode) {
   .where('country_code', countryCode)
   .update({notes: notes})
   .then(() => {
-    return knex('countries').where('country_code', countryCode)
+    return knex('countries')
+    .where('country_code', countryCode)
+    .first()
   })
 }
 

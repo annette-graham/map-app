@@ -17,6 +17,7 @@ export function apiEditNotes (countryCode, notes, callback) {
   return request.put(`${mapUrl}/${countryCode}`)
     .send(notes)
     .then(data => {
+      console.log("api res", {data})
       const editedNote = data.body
       return callback(editedNote)
     })

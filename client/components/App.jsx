@@ -77,8 +77,10 @@ class App extends React.Component {
   console.log("editNotes")
     apiEditNotes(this.state.selectedCountry, notes, (newNotes) => {
       console.log({newNotes})
+      const {data} = this.state
+      data.notes = newNotes
       this.setState({
-        notes: newNotes,
+        data,
         editVisible: false,
         detailsVisible: true
       })
