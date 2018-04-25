@@ -13,7 +13,7 @@ export default function CountryDetails (props) {
       <p>population: {data.population}</p>
       <p>Notes: {data.notes}</p>
       <button className='button' onClick={hideDetails}>Close</button>
-      <button className='button' onClick={editNotes}>Edit Notes</button>
+      <button className='button' onClick={editNotes}>Add Info</button>
     </div>
   )
 }

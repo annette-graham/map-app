@@ -26,10 +26,11 @@ class UpdateForm extends React.Component {
   render() {
     return <div className = 'editInfo'>
       <form onSubmit={this.handleSubmit}>
-        <input className='input' onChange={this.handleChange} value={this.state.notes} type="text" name="notes" placeholder="Edit Info"/>
+        <h2>Add Info</h2>
+        <textarea className='input' onChange={this.handleChange} value={this.state.notes} type="text" name="notes" placeholder='Add Info'/>
         <br/><br/>
         <input className='button' type="submit" value="Update Info" />
-      </form> <br/>
+      </form>
       <button className='button' onClick={this.props.toggleEdit}>Cancel</button>
     </div>
   }

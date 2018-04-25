@@ -1,17 +1,15 @@
 body {
-	background-image: url('photos/bgd3.jpeg');
+	background-image: url('photos/bgd5.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	margin-left: 10%;
-	color: lightgray;
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: center;
   width: 80%;
   height: 80%;
 }
 
 .title {
+	text-align: center;
   font-family: 'Handlee', cursive;
 	opacity: 0.8;
 	border-radius: 15px;
@@ -20,6 +18,7 @@ body {
 }
 
 .para {
+	text-align: center;
 	font-family: 'Handlee', cursive;
 	font-size: 2em;
 	color: beige;
@@ -27,34 +26,53 @@ body {
 }
 
 .details {
-	background-color: pink;
-	color: black;
+	text-align: center;
+	font-family: 'Handlee', cursive;
+	font-size: 1.3em;
+	background-color: #4c0060;
+	opacity: 0.8;
+	color: white;
 	border-radius: 15px;
 	padding: 5% 5%;
 	position: absolute;
-	top: 50%;
-	margin-left: 30%;
-	margin-right: 30%;
+	top: 55%;
+	margin-left: 25%;
+	width: 20%;
 
 }
 
 .editInfo {
-	background-color: pink;
-	color: black;
+	text-align: center;
+	font-family: 'Handlee', cursive;
+	font-size: 1.3em;
+	background-color: #4c0060;
+	opacity: 0.8;
+	color: white;
 	border-radius: 15px;
 	padding: 5% 5%;
 	position: absolute;
-	top: 30%;
-	margin-left: 30%;
-	margin-right: 30%;
+	top: 55%;
+	margin-left: 25%;
+	width: 20%;
 }
 
 .button {
 	border-radius: 15px;
+	padding: 0.5% 2%;
+	margin: 2%;
 }
 
 .input {
+	font-size: 0.8em;
 	border-radius: 15px;
+	width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+	border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
 }
 
 path.land {
@@ -68,10 +86,9 @@ path.land {
 path.land:hover {
   fill: #4c0060;
   fill-opacity: 0.65;
-	animation: country 3s infinite;
-  animation-direction: alternate;
+	animation: country 1s;
 }
-@keyframes country {100% {transform: scale(1.01);} }
+@keyframes country {15% {transform: scale(1.01);} }
 
 
 /* "https://media.giphy.com/media/fC6BAcnLFF2o/giphy.gif" */
