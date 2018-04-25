@@ -1,7 +1,8 @@
 body {
-	background-image: url("https://c1.staticflickr.com/8/7221/7108632527_7f7b68b60e_b.jpg");
+	background-image: url('photos/bgd3.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	margin-left: 10%;
 	color: lightgray;
 	font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +13,6 @@ body {
 
 .title {
   font-family: 'Handlee', cursive;
-	background-color: #4c0060;
 	opacity: 0.8;
 	border-radius: 15px;
   font-size: 3.3em;
@@ -20,6 +20,7 @@ body {
 }
 
 .para {
+	font-family: 'Handlee', cursive;
 	font-size: 2em;
 	color: beige;
 	padding-bottom: 4%;
@@ -46,6 +47,14 @@ body {
 	top: 30%;
 	margin-left: 30%;
 	margin-right: 30%;
+}
+
+.button {
+	border-radius: 15px;
+}
+
+.input {
+	border-radius: 15px;
 }
 
 path.land {
