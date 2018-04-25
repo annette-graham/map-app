@@ -4,7 +4,7 @@ import WorldMap from './WorldMap'
 import UpdateForm from './UpdateForm'
 import CountryDetails from './CountryDetails'
 
-import {getCountryCode, editNotes} from '../api'
+import {getCountryCode, apiEditNotes} from '../api'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class App extends React.Component {
    this.hideDetails = this.hideDetails.bind(this)
    this.selectCountry = this.selectCountry.bind(this)
    this.editNotes = this.editNotes.bind(this)
+   this.toggleEdit = this.toggleEdit.bind(this)
 
   }
 
@@ -63,21 +64,32 @@ class App extends React.Component {
   }
 
 
-  editNotes () {
-  console.log("editNotes")
+  toggleEdit() {
     this.setState({
-      detailsVisible: false,
-      editVisible: true
-    })
-    editNotes(notes => {
-      this.setState({
-        notes: notes
-      })
+      editVisible: !this.state.editVisible
     })
   }
 
+
+  editNotes (notes) {
+    console.log("222222222222")
+
+  console.log("editNotes")
+    apiEditNotes(this.state.selectedCountry, notes, (newNotes) => {
+      console.log({newNotes})
+      this.setState({
+        notes: newNotes,
+        editVisible: false,
+        detailsVisible: true
+      })
+      console.log("STATE IS SET: NOTES=" + newNotes + "deatils vis -" + this.state)
+      console.log("The current state 1 notes " + this.state.notes)
+      console.log("The current passed in notes " + newNotes)
+    })
+  }
+
+
   render () {
-    console.log(this.state.editVisible)
     return (
       <div className = 'container'>
         <div className ='title'>
@@ -88,16 +100,24 @@ class App extends React.Component {
         </div>
         <div className = 'map'>
           <WorldMap selectCountry={this.selectCountry}/>
+          {console.log("The current state 2 notes" + this.state.notes)}
 
-          {this.state.detailsVisible && <CountryDetails
-          data={this.state.data}
-          hideDetails={this.hideDetails}
-          editNotes={this.editNotes}/>}
-
-          {this.state.editVisible && <UpdateForm
-          notes={this.state.notes}
-          editVisible={this.editVisible}
-          hideDetails={this.hideDetails}/>}
+          {this.state.editVisible
+            ? <UpdateForm
+              editNotes={this.editNotes}
+              notes={this.state.notes}
+              editVisible={this.editVisible}
+              hideDetails={this.hideDetails}
+              toggleEdit={this.toggleEdit}
+            />
+            : this.state.detailsVisible
+              ? <CountryDetails
+                data={this.state.data}
+                hideDetails={this.hideDetails}
+                editNotes={this.toggleEdit}
+              />
+              : null
+          }
 
         </div>
       </div>

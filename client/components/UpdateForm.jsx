@@ -19,22 +19,14 @@ class UpdateForm extends React.Component {
     console.log(e.target, e.target.value)
     var key = e.target.name
     var value = e.target.value
-     console.log({key, value});
-     this.setState({[key]: value})
-
+    this.setState({[key]: value})
   }
 
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.editNotes(this.state)
-  }
-
-
-  hideDetails () {
-    this.setState({
-      detailsVisible: false
-    })
+    console.log("111111111111111111")
+    this.props.editNotes(this.state.notes)
   }
 
 
@@ -44,8 +36,8 @@ class UpdateForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} value={this.state.notes} type="text" name="notes" placeholder="Edit Info"/>
         <input type="submit" value="Update Info" />
-
       </form>
+      <button onClick={this.props.toggleEdit}>Cancel</button>
     </div>
   }
 }

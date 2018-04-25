@@ -2,12 +2,13 @@ import React from 'react'
 import WorldMap from './WorldMap'
 
 export default function CountryDetails (props) {
-  const {data, hideDetails, editNotes} = props
+  const {data, notes, hideDetails, editNotes} = props
 
 
   return (
     <div className='details'>
         {console.log("Here is my " + data.name)}
+        {console.log("The current state notes " + notes)}
       <h2>{data.name}</h2>
       <p>Capital: {data.capital}</p>
       <p>Language: {data.language}</p>

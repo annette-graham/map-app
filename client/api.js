@@ -13,12 +13,12 @@ export function getCountryCode (countryCode, callback) {
 }
 
 
-export function editNotes (note) {
+export function apiEditNotes (countryCode, notes, callback) {
   return request.put(`${mapUrl}/${countryCode}`)
-    .send(note)
+    .send(notes)
     .then(data => {
-      const editedNotes = data.body
-      return editedNotes
+      const editedNote = data.body
+      return callback(editedNote)
     })
     .catch(err => {
       console.log(err)

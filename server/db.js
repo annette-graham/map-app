@@ -10,10 +10,13 @@ function clickedCountry (countryCode) {
   .first()
 }
 
-function editNotes(countries, notes) {
+function editNotes(notes, countryCode) {
   return knex('countries')
-  .where('notes', notes)
-  .update({notes: countries.notes})
+  .where('country_code', countryCode)
+  .update({notes: notes})
+  .then(() => {
+    return knex('countries').where('country_code', countryCode)
+  })
 }
 
 module.exports = {
