@@ -4,7 +4,7 @@ import WorldMap from './WorldMap'
 import UpdateForm from './UpdateForm'
 import CountryDetails from './CountryDetails'
 
-import {getCountryCode} from '../api'
+import {getCountryCode, editNotes} from '../api'
 
 class App extends React.Component {
   constructor(props) {
@@ -62,11 +62,17 @@ class App extends React.Component {
     })
   }
 
+
   editNotes () {
   console.log("editNotes")
     this.setState({
       detailsVisible: false,
       editVisible: true
+    })
+    editNotes(notes => {
+      this.setState({
+        notes: notes
+      })
     })
   }
 

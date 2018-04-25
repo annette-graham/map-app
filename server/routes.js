@@ -18,4 +18,14 @@ router.get('/:countryCode', (req, res) => {
 })
 
 
+router.put('/:countryCode', (req, res) => {
+  db.editNotes(req.body, req.params.countryCode)
+  .then((update) => {
+    res.json(update)
+  })
+  .catch(err => {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
+})
+
 module.exports = router
