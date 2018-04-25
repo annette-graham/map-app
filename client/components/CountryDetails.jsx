@@ -12,8 +12,8 @@ export default function CountryDetails (props) {
       <p>Currency: {data.currency}</p>
       <p>population: {data.population}</p>
       <p>Notes: {data.notes}</p>
-      <button onClick={hideDetails}>Close</button>
-      <button onClick={editNotes}>Edit Notes</button>
+      <button className='button' onClick={hideDetails}>Close</button>
+      <button className='button' onClick={editNotes}>Edit Notes</button>
     </div>
   )
 }
