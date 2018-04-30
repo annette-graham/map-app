@@ -1,5 +1,6 @@
 const path = require('path')
-const config = require(path.join(__dirname, '../knexfile')).development
+const environment = process.env.NODE_ENV || 'development'
+const config = require(path.join(__dirname, '../knexfile'))[environment]
 const knex = require('knex')(config)
 
 function clickedCountry (countryCode) {
